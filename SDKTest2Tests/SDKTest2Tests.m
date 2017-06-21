@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ColorHelper.h"
 
 @interface SDKTest2Tests : XCTestCase
 
@@ -24,9 +25,10 @@
     [super tearDown];
 }
 
-- (void)testExample {
+- (void)testColorConversion {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
 }
 
 - (void)testPerformanceExample {

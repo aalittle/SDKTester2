@@ -1,26 +1,99 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QE4-YF-XSs">
+                                <rect key="frame" x="20" y="272" width="379" height="192"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter fav sport" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gg0-JC-wA3">
+                                        <rect key="frame" x="9" y="131" width="362" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCK-5f-Ydt">
+                                        <rect key="frame" x="9" y="102" width="117" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter fav food" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R0H-X6-g5K">
+                                        <rect key="frame" x="8" y="60" width="363" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDv-pW-up8">
+                                        <rect key="frame" x="9" y="31" width="114" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gg0-JC-wA3" firstAttribute="top" secondItem="ZCK-5f-Ydt" secondAttribute="bottom" constant="8" symbolic="YES" id="1t9-G0-X15"/>
+                                    <constraint firstItem="dDv-pW-up8" firstAttribute="leading" secondItem="QE4-YF-XSs" secondAttribute="leading" constant="9" id="CGg-JQ-TmX"/>
+                                    <constraint firstItem="ZCK-5f-Ydt" firstAttribute="top" secondItem="R0H-X6-g5K" secondAttribute="bottom" constant="12" id="CJz-EW-p59"/>
+                                    <constraint firstAttribute="trailing" secondItem="R0H-X6-g5K" secondAttribute="trailing" constant="8" id="DPP-mS-qA7"/>
+                                    <constraint firstItem="dDv-pW-up8" firstAttribute="leading" secondItem="ZCK-5f-Ydt" secondAttribute="leading" id="UR5-SW-SOR"/>
+                                    <constraint firstItem="R0H-X6-g5K" firstAttribute="leading" secondItem="QE4-YF-XSs" secondAttribute="leadingMargin" id="av9-iP-BaF"/>
+                                    <constraint firstItem="dDv-pW-up8" firstAttribute="top" secondItem="QE4-YF-XSs" secondAttribute="top" constant="31" id="dcK-15-bgj"/>
+                                    <constraint firstItem="gg0-JC-wA3" firstAttribute="centerX" secondItem="QE4-YF-XSs" secondAttribute="centerX" id="ddA-qn-ScP"/>
+                                    <constraint firstItem="R0H-X6-g5K" firstAttribute="top" secondItem="dDv-pW-up8" secondAttribute="bottom" constant="8" symbolic="YES" id="fSd-gu-H3E"/>
+                                    <constraint firstAttribute="height" constant="192" id="l02-kr-IaW"/>
+                                    <constraint firstItem="ZCK-5f-Ydt" firstAttribute="leading" secondItem="gg0-JC-wA3" secondAttribute="leading" id="nhx-ki-7KA"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiV-IM-Cs5">
+                                <rect key="frame" x="18" y="209" width="379" height="46"/>
+                                <color key="backgroundColor" white="0.95208864800000004" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.086274509799999996" green="0.30980392159999998" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VNp-pS-XyJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.6705882353" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xiV-IM-Cs5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-2" id="8ws-su-eHr"/>
+                            <constraint firstItem="QE4-YF-XSs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JZo-ve-hbn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QE4-YF-XSs" secondAttribute="trailing" constant="-5" id="NTv-r6-lAb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xiV-IM-Cs5" secondAttribute="trailing" constant="-3" id="bRp-Ks-RWT"/>
+                            <constraint firstItem="QE4-YF-XSs" firstAttribute="top" secondItem="xiV-IM-Cs5" secondAttribute="bottom" constant="17" id="nb0-h1-bRo"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="QE4-YF-XSs" secondAttribute="leading" id="pE7-NN-fBA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="favFood" destination="R0H-X6-g5K" id="OTA-tw-OiM"/>
+                        <outlet property="favSport" destination="gg0-JC-wA3" id="hXf-bT-VVI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31.884057971014496" y="37.5"/>
         </scene>
     </scenes>
 </document>
