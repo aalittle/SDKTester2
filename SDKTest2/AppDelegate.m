@@ -112,6 +112,9 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
     [[ETLocationManager sharedInstance] startWatchingLocation];
   }
   
+  //clear the badge number
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+  
   return YES;
 }
 

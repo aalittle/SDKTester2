@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02D740998034A0F885D1871831526171 /* libJB4ASDK-4.9.0.20800000.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.9.0.20800000.a"; path = "JB4A-SDK/libJB4ASDK-4.9.0.20800000.a"; sourceTree = "<group>"; };
 		08CD9FB092A1B4E4342B9CB822E9E10C /* ETRegion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ETRegion.h; path = "JB4A-SDK/ETRegion.h"; sourceTree = "<group>"; };
 		0B2656A5B6060627F493BA676E1BFA3F /* Pods_SDKTest2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SDKTest2.framework; path = "Pods-SDKTest2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C601004A867C58CAFD5907C4DB70C8 /* ETEventRegion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ETEventRegion.h; path = "JB4A-SDK/ETEventRegion.h"; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		8E39C9BE384F1715E41DCEB9706889EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99E7745B1507F9EA522AD24D4C67B868 /* ETLocationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ETLocationManager.h; path = "JB4A-SDK/ETLocationManager.h"; sourceTree = "<group>"; };
-		A2C0E1EEDFC0828C83A2ABA821DC840E /* libJB4ASDK-4.8.0.20700001.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.8.0.20700001.a"; path = "JB4A-SDK/libJB4ASDK-4.8.0.20700001.a"; sourceTree = "<group>"; };
 		A4D82410A2DD076B868D65337FD5ABC1 /* ETMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ETMessage.h; path = "JB4A-SDK/ETMessage.h"; sourceTree = "<group>"; };
 		A648CC1236E4AC5C6EFF2C8F81D2CF65 /* Themes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Themes.swift; path = Source/Extensions/Themes.swift; sourceTree = "<group>"; };
 		AA01DEF6033FBCEB02C016D441AB11B4 /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ETWKLandingPagePresenter.h; path = "JB4A-SDK/ETWKLandingPagePresenter.h"; sourceTree = "<group>"; };
@@ -101,14 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		027937725ED5A126E0A43563E1690F23 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A2C0E1EEDFC0828C83A2ABA821DC840E /* libJB4ASDK-4.8.0.20700001.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		111E121259909432CF24F9F82CCA05CA /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +124,14 @@
 				0B2656A5B6060627F493BA676E1BFA3F /* Pods_SDKTest2.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6D05AB3928B7C29C1040E620E7B8E567 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02D740998034A0F885D1871831526171 /* libJB4ASDK-4.9.0.20800000.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -209,7 +209,7 @@
 				1D9306419D18716A7FD6837223C1F0AC /* PICartItem.h */,
 				6386226E605EEF611106CCE1A9B13211 /* PIOrder.h */,
 				BA58FF2C4DF0E937854717B91B18C93F /* PushConstants.h */,
-				027937725ED5A126E0A43563E1690F23 /* Frameworks */,
+				6D05AB3928B7C29C1040E620E7B8E567 /* Frameworks */,
 			);
 			name = JB4ASDK;
 			path = JB4ASDK;
