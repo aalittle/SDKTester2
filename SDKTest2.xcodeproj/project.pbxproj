@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2841688A807FFF09A9CF1E19 /* Pods_SDKTest2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BF5E4FD4362EFC61E1E82C /* Pods_SDKTest2.framework */; };
 		DD63127F1EF3EFF700CF8E1A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD63127E1EF3EFF700CF8E1A /* main.m */; };
 		DD6312821EF3EFF700CF8E1A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6312811EF3EFF700CF8E1A /* AppDelegate.m */; };
 		DD6312851EF3EFF700CF8E1A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6312841EF3EFF700CF8E1A /* ViewController.m */; };
@@ -17,6 +16,8 @@
 		DD6312981EF3EFF700CF8E1A /* SDKTest2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6312971EF3EFF700CF8E1A /* SDKTest2Tests.m */; };
 		DD6312A31EF3EFF700CF8E1A /* SDKTest2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6312A21EF3EFF700CF8E1A /* SDKTest2UITests.m */; };
 		DD8F39FD1F183FC500DF4A4A /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F39FC1F183FC500DF4A4A /* InboxTableViewController.m */; };
+		DD9CA0E81F28195C0028A0BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CA0E71F28195C0028A0BE /* WebKit.framework */; };
+		DD9CA0E91F2819650028A0BE /* libJB4ASDK-4.9.0.20800000.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CA0E11F28194A0028A0BE /* libJB4ASDK-4.9.0.20800000.a */; };
 		DDBDA5E31EF713F100B5DDB9 /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */; };
 		DDD2BD191F184B200087F945 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD2BD181F184B200087F945 /* TableViewController.m */; };
 /* End PBXBuildFile section */
@@ -39,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BBF9CF200A352742DF81C1C1 /* Pods-SDKTest2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKTest2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKTest2/Pods-SDKTest2.debug.xcconfig"; sourceTree = "<group>"; };
 		DD33A89E1EF3F0A200C7B294 /* SDKTest2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SDKTest2.entitlements; sourceTree = "<group>"; };
 		DD63127A1EF3EFF700CF8E1A /* SDKTest2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDKTest2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD63127E1EF3EFF700CF8E1A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,12 +59,30 @@
 		DD6312A41EF3EFF800CF8E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD8F39FB1F183FC500DF4A4A /* InboxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InboxTableViewController.h; sourceTree = "<group>"; };
 		DD8F39FC1F183FC500DF4A4A /* InboxTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewController.m; sourceTree = "<group>"; };
-		DDA95E13783A93469F51A20F /* Pods-SDKTest2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKTest2.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKTest2/Pods-SDKTest2.release.xcconfig"; sourceTree = "<group>"; };
+		DD9CA0D31F28194A0028A0BE /* ETAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAnalytics.h; sourceTree = "<group>"; };
+		DD9CA0D41F28194A0028A0BE /* ETCloudPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCloudPage.h; sourceTree = "<group>"; };
+		DD9CA0D51F28194A0028A0BE /* ETCloudPageDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCloudPageDataSource.h; sourceTree = "<group>"; };
+		DD9CA0D61F28194A0028A0BE /* ETEventMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETEventMessage.h; sourceTree = "<group>"; };
+		DD9CA0D71F28194A0028A0BE /* ETEventRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETEventRegion.h; sourceTree = "<group>"; };
+		DD9CA0D81F28194A0028A0BE /* ETGenericUpdate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
+		DD9CA0D91F28194A0028A0BE /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
+		DD9CA0DA1F28194A0028A0BE /* ETLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
+		DD9CA0DB1F28194A0028A0BE /* ETMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
+		DD9CA0DC1F28194A0028A0BE /* ETPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
+		DD9CA0DD1F28194A0028A0BE /* ETRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
+		DD9CA0DE1F28194A0028A0BE /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWKLandingPagePresenter.h; sourceTree = "<group>"; };
+		DD9CA0DF1F28194A0028A0BE /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
+		DD9CA0E01F28194A0028A0BE /* JB4ASDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JB4ASDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD9CA0E11F28194A0028A0BE /* libJB4ASDK-4.9.0.20800000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.9.0.20800000.a"; sourceTree = "<group>"; };
+		DD9CA0E21F28194A0028A0BE /* PICart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PICart.h; sourceTree = "<group>"; };
+		DD9CA0E31F28194A0028A0BE /* PICartItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PICartItem.h; sourceTree = "<group>"; };
+		DD9CA0E41F28194A0028A0BE /* PIOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIOrder.h; sourceTree = "<group>"; };
+		DD9CA0E51F28194A0028A0BE /* PushConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
+		DD9CA0E71F28195C0028A0BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		DDBDA5E11EF713F100B5DDB9 /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
 		DDD2BD171F184B200087F945 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		DDD2BD181F184B200087F945 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		F9BF5E4FD4362EFC61E1E82C /* Pods_SDKTest2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDKTest2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2841688A807FFF09A9CF1E19 /* Pods_SDKTest2.framework in Frameworks */,
+				DD9CA0E91F2819650028A0BE /* libJB4ASDK-4.9.0.20800000.a in Frameworks */,
+				DD9CA0E81F28195C0028A0BE /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,23 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5760BB07349DC5C4FCF48528 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F9BF5E4FD4362EFC61E1E82C /* Pods_SDKTest2.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DD6312711EF3EFF700CF8E1A = {
 			isa = PBXGroup;
 			children = (
+				DD9CA0D21F28194A0028A0BE /* JB4A-SDK */,
 				DD63127C1EF3EFF700CF8E1A /* SDKTest2 */,
 				DD6312961EF3EFF700CF8E1A /* SDKTest2Tests */,
 				DD6312A11EF3EFF700CF8E1A /* SDKTest2UITests */,
 				DD63127B1EF3EFF700CF8E1A /* Products */,
-				FDF0337A9D93660B01E12D6B /* Pods */,
-				5760BB07349DC5C4FCF48528 /* Frameworks */,
+				DD9CA0E61F28195B0028A0BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,13 +183,38 @@
 			path = SDKTest2UITests;
 			sourceTree = "<group>";
 		};
-		FDF0337A9D93660B01E12D6B /* Pods */ = {
+		DD9CA0D21F28194A0028A0BE /* JB4A-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				BBF9CF200A352742DF81C1C1 /* Pods-SDKTest2.debug.xcconfig */,
-				DDA95E13783A93469F51A20F /* Pods-SDKTest2.release.xcconfig */,
+				DD9CA0D31F28194A0028A0BE /* ETAnalytics.h */,
+				DD9CA0D41F28194A0028A0BE /* ETCloudPage.h */,
+				DD9CA0D51F28194A0028A0BE /* ETCloudPageDataSource.h */,
+				DD9CA0D61F28194A0028A0BE /* ETEventMessage.h */,
+				DD9CA0D71F28194A0028A0BE /* ETEventRegion.h */,
+				DD9CA0D81F28194A0028A0BE /* ETGenericUpdate.h */,
+				DD9CA0D91F28194A0028A0BE /* ETLandingPagePresenter.h */,
+				DD9CA0DA1F28194A0028A0BE /* ETLocationManager.h */,
+				DD9CA0DB1F28194A0028A0BE /* ETMessage.h */,
+				DD9CA0DC1F28194A0028A0BE /* ETPush.h */,
+				DD9CA0DD1F28194A0028A0BE /* ETRegion.h */,
+				DD9CA0DE1F28194A0028A0BE /* ETWKLandingPagePresenter.h */,
+				DD9CA0DF1F28194A0028A0BE /* ExactTargetEnhancedPushDataSource.h */,
+				DD9CA0E01F28194A0028A0BE /* JB4ASDK-Bridging-Header.h */,
+				DD9CA0E11F28194A0028A0BE /* libJB4ASDK-4.9.0.20800000.a */,
+				DD9CA0E21F28194A0028A0BE /* PICart.h */,
+				DD9CA0E31F28194A0028A0BE /* PICartItem.h */,
+				DD9CA0E41F28194A0028A0BE /* PIOrder.h */,
+				DD9CA0E51F28194A0028A0BE /* PushConstants.h */,
 			);
-			name = Pods;
+			path = "JB4A-SDK";
+			sourceTree = "<group>";
+		};
+		DD9CA0E61F28195B0028A0BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD9CA0E71F28195C0028A0BE /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,12 +224,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD6312A71EF3EFF800CF8E1A /* Build configuration list for PBXNativeTarget "SDKTest2" */;
 			buildPhases = (
-				9E30AF3CF462A3AA4756AAA0 /* [CP] Check Pods Manifest.lock */,
 				DD6312761EF3EFF700CF8E1A /* Sources */,
 				DD6312771EF3EFF700CF8E1A /* Frameworks */,
 				DD6312781EF3EFF700CF8E1A /* Resources */,
-				10B23C63A532932DF6035025 /* [CP] Embed Pods Frameworks */,
-				F75F1C74D69DA5E0E79ED37B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,54 +352,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		10B23C63A532932DF6035025 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDKTest2/Pods-SDKTest2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E30AF3CF462A3AA4756AAA0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F75F1C74D69DA5E0E79ED37B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDKTest2/Pods-SDKTest2-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD6312761EF3EFF700CF8E1A /* Sources */ = {
@@ -525,7 +510,6 @@
 		};
 		DD6312A81EF3EFF800CF8E1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBF9CF200A352742DF81C1C1 /* Pods-SDKTest2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SDKTest2/SDKTest2.entitlements;
@@ -534,7 +518,7 @@
 				INFOPLIST_FILE = SDKTest2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/JB4A-SDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleapps.SDKTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -543,7 +527,6 @@
 		};
 		DD6312A91EF3EFF800CF8E1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDA95E13783A93469F51A20F /* Pods-SDKTest2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SDKTest2/SDKTest2.entitlements;
@@ -552,7 +535,7 @@
 				INFOPLIST_FILE = SDKTest2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/JB4A-SDK";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleapps.SDKTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
