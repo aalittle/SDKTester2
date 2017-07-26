@@ -16,7 +16,9 @@
 		DD63128D1EF3EFF700CF8E1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD63128B1EF3EFF700CF8E1A /* LaunchScreen.storyboard */; };
 		DD6312981EF3EFF700CF8E1A /* SDKTest2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6312971EF3EFF700CF8E1A /* SDKTest2Tests.m */; };
 		DD6312A31EF3EFF700CF8E1A /* SDKTest2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6312A21EF3EFF700CF8E1A /* SDKTest2UITests.m */; };
+		DD8F39FD1F183FC500DF4A4A /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F39FC1F183FC500DF4A4A /* InboxTableViewController.m */; };
 		DDBDA5E31EF713F100B5DDB9 /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */; };
+		DDD2BD191F184B200087F945 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD2BD181F184B200087F945 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +57,13 @@
 		DD63129E1EF3EFF700CF8E1A /* SDKTest2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDKTest2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6312A21EF3EFF700CF8E1A /* SDKTest2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDKTest2UITests.m; sourceTree = "<group>"; };
 		DD6312A41EF3EFF800CF8E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD8F39FB1F183FC500DF4A4A /* InboxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InboxTableViewController.h; sourceTree = "<group>"; };
+		DD8F39FC1F183FC500DF4A4A /* InboxTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewController.m; sourceTree = "<group>"; };
 		DDA95E13783A93469F51A20F /* Pods-SDKTest2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKTest2.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKTest2/Pods-SDKTest2.release.xcconfig"; sourceTree = "<group>"; };
 		DDBDA5E11EF713F100B5DDB9 /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
+		DDD2BD171F184B200087F945 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		DDD2BD181F184B200087F945 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		F9BF5E4FD4362EFC61E1E82C /* Pods_SDKTest2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDKTest2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,6 +138,10 @@
 				DD63127D1EF3EFF700CF8E1A /* Supporting Files */,
 				DDBDA5E11EF713F100B5DDB9 /* ColorHelper.h */,
 				DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */,
+				DD8F39FB1F183FC500DF4A4A /* InboxTableViewController.h */,
+				DD8F39FC1F183FC500DF4A4A /* InboxTableViewController.m */,
+				DDD2BD171F184B200087F945 /* TableViewController.h */,
+				DDD2BD181F184B200087F945 /* TableViewController.m */,
 			);
 			path = SDKTest2;
 			sourceTree = "<group>";
@@ -364,7 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD6312851EF3EFF700CF8E1A /* ViewController.m in Sources */,
+				DDD2BD191F184B200087F945 /* TableViewController.m in Sources */,
 				DD6312821EF3EFF700CF8E1A /* AppDelegate.m in Sources */,
+				DD8F39FD1F183FC500DF4A4A /* InboxTableViewController.m in Sources */,
 				DD63127F1EF3EFF700CF8E1A /* main.m in Sources */,
 				DDBDA5E31EF713F100B5DDB9 /* ColorHelper.m in Sources */,
 			);
