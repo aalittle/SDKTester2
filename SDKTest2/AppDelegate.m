@@ -172,10 +172,7 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
   }
   else {
-    // received a remote notification...
-    
-    // clear the badge
-    [[ETPush pushManager] resetBadgeCount];
+    // received a remote notification...    
   }
   
   [AppDelegate setColorFromUserInfo:userInfo viewController:((ViewController *)self.window.rootViewController)];
