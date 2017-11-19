@@ -32,10 +32,9 @@
   // Track the addition of a cart item
   PICartItem *cartItem1 = [[PICartItem alloc] initWithPrice:@(1.10) quantity:@(1) item:@"111"];
   PICartItem *cartItem2 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"222"];
-  PICartItem *cartItem3 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"333"]; // product 333 sku 333
-  PICartItem *cartItem4 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"333"]; // product 333 sku 332
-  PICartItem *cartItem5 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"333"]; // product 333 sku 331
-
+  PICartItem *cartItem3 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"333"]; // product 333 sku 333
+  PICartItem *cartItem4 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"332"]; // product 333 sku 332
+  PICartItem *cartItem5 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"331"]; // product 333 sku 331
 
   PICart *cart = [[PICart alloc] initWithCartItems:@[cartItem1, cartItem2, cartItem3, cartItem4, cartItem5]];
   [ETAnalytics trackCartContents:cart];
@@ -45,12 +44,12 @@
   //Track a purchase
   PICartItem *cartItem = [[PICartItem alloc] initWithPrice:@(1.10) quantity:@(1) item:@"111"];
   PICartItem *cartItem2 = [[PICartItem alloc] initWithPrice:@(1.10) quantity:@(1) item:@"222"];
-  PICartItem *cartItem3 = [[PICartItem alloc] initWithPrice:@(1.10) quantity:@(1) item:@"333"]; // product 333 sku 333
-  PICartItem *cartItem4 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"332"]; // product 333 sku 332
-  PICartItem *cartItem5 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"331"]; // product 333 sku 331
+  PICartItem *cartItem3 = [[PICartItem alloc] initWithPrice:@(1.10) quantity:@(1) item:@"333" uniqueId:@"333"]; // product 333 sku 333
+  PICartItem *cartItem4 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"332"]; // product 333 sku 332
+  PICartItem *cartItem5 = [[PICartItem alloc] initWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"331"]; // product 333 sku 331
 
   PICart *cart = [[PICart alloc] initWithCartItems:@[cartItem, cartItem2, cartItem3, cartItem4, cartItem5]];
-  PIOrder *order = [[PIOrder alloc] initWithOrderNumber:@"999" shipping:@(2.11) discount:@(4.99) cart:cart];
+  PIOrder *order = [[PIOrder alloc] initWithOrderNumber:@"1000" shipping:@(2.11) discount:@(4.99) cart:cart];
   [ETAnalytics trackCartConversion:order];
 }
 

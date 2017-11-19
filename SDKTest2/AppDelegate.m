@@ -110,6 +110,13 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
     // This method is required in order for location messaging to work and the user's location to be processed
     // Only call this method if you have LocationServices set to YES in configureSDK()
     [[ETLocationManager sharedInstance] startWatchingLocation];
+    
+    UIDevice *device = [UIDevice currentDevice];
+    NSString *currentDeviceId = [[[device identifierForVendor]UUIDString] substringToIndex:3];
+    NSString *emailAddress = [NSString stringWithFormat:@"alittle+%@@salesforce.com", currentDeviceId];
+    NSLog(@"%@", emailAddress);
+    [[ETPush pushManager] setSubscriberKey:emailAddress];
+      [[ETPush pushManager] addAttributeNamed:@"Phone Name" value: device.name];
   }
   
   //clear the badge number
@@ -185,7 +192,8 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
   NSString *colorHex = [userInfo objectForKey:@"ColorPrimary"];
   NSLog(@"color string: %@", colorHex);
   UIColor *colorFromServer = [ColorHelper colorWithHexString:colorHex];
-  [controller setBackgroundColor:colorFromServer];
+  if(colorFromServer != nil) {
+    [controller setBackgroundColor:colorFromServer];
+  }
 }
-
 @end

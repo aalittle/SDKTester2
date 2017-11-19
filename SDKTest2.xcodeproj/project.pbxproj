@@ -18,8 +18,8 @@
 		DD8F39FD1F183FC500DF4A4A /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F39FC1F183FC500DF4A4A /* InboxTableViewController.m */; };
 		DD9CA0E81F28195C0028A0BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CA0E71F28195C0028A0BE /* WebKit.framework */; };
 		DDBDA5E31EF713F100B5DDB9 /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */; };
+		DDCBD73E1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBD73D1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a */; };
 		DDD2BD191F184B200087F945 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD2BD181F184B200087F945 /* TableViewController.m */; };
-		EE677F2D1F45B84A00977504 /* libJB4ASDK-4.9.5.20900000.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE677F2C1F45B77900977504 /* libJB4ASDK-4.9.5.20900000.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,10 +80,10 @@
 		DD9CA0E71F28195C0028A0BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		DDBDA5E11EF713F100B5DDB9 /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
+		DDCBD73D1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.9.6.21000000.a"; sourceTree = "<group>"; };
 		DDD2BD171F184B200087F945 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		DDD2BD181F184B200087F945 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		EE677F2B1F45B73700977504 /* libJB4ASDK-4.9.5.20900000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.9.5.20900000.a"; path = "JB4A-SDK/libJB4ASDK-4.9.5.20900000.a"; sourceTree = "<group>"; };
-		EE677F2C1F45B77900977504 /* libJB4ASDK-4.9.5.20900000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.9.5.20900000.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE677F2D1F45B84A00977504 /* libJB4ASDK-4.9.5.20900000.a in Frameworks */,
 				DD9CA0E81F28195C0028A0BE /* WebKit.framework in Frameworks */,
+				DDCBD73E1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +187,7 @@
 		DD9CA0D21F28194A0028A0BE /* JB4A-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				EE677F2C1F45B77900977504 /* libJB4ASDK-4.9.5.20900000.a */,
+				DDCBD73D1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a */,
 				DD9CA0D31F28194A0028A0BE /* ETAnalytics.h */,
 				DD9CA0D41F28194A0028A0BE /* ETCloudPage.h */,
 				DD9CA0D51F28194A0028A0BE /* ETCloudPageDataSource.h */,
