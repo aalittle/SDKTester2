@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ETPush.h"
+//#import "ETPush.h"
 #import "ColorHelper.h"
 #import "ViewController.h"
 
@@ -23,31 +23,31 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   BOOL successful = NO;
   NSError *error = nil;
-#ifdef DEBUG
-  // Set to YES to enable logging while debugging
-  [ETPush setETLoggerToRequiredState:YES];
-  
-  // configure and set initial settings of the JB4ASDK
-  successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug
-                                            andAccessToken:kETAccessToken_Debug
-                                             withAnalytics:YES
-                                       andLocationServices:YES       // ONLY SET TO YES IF PURCHASED AND USING GEOFENCE CAPABILITIES
-                                      andProximityServices:NO       // ONLY SET TO YES IF PURCHASED AND USING BEACONS
-                                             andCloudPages:YES       // ONLY SET TO YES IF PURCHASED AND USING CLOUDPAGES
-                                           withPIAnalytics:YES
-                                                     error:&error];
-#else
-  // configure and set initial settings of the JB4ASDK
-  successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod
-                                            andAccessToken:kETAccessToken_Prod
-                                             withAnalytics:YES
-                                       andLocationServices:YES       // ONLY SET TO YES IF PURCHASED AND USING GEOFENCE CAPABILITIES
-                                      andProximityServices:NO       // ONLY SET TO YES IF PURCHASED AND USING BEACONS
-                                             andCloudPages:YES       // ONLY SET TO YES IF PURCHASED AND USING CLOUDPAGES
-                                           withPIAnalytics:YES
-                                                     error:&error];
-  
-#endif
+//#ifdef DEBUG
+//  // Set to YES to enable logging while debugging
+//  //[ETPush setETLoggerToRequiredState:YES];
+//
+//  // configure and set initial settings of the JB4ASDK
+//  successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug
+//                                            andAccessToken:kETAccessToken_Debug
+//                                             withAnalytics:YES
+//                                       andLocationServices:YES       // ONLY SET TO YES IF PURCHASED AND USING GEOFENCE CAPABILITIES
+//                                      andProximityServices:NO       // ONLY SET TO YES IF PURCHASED AND USING BEACONS
+//                                             andCloudPages:YES       // ONLY SET TO YES IF PURCHASED AND USING CLOUDPAGES
+//                                           withPIAnalytics:YES
+//                                                     error:&error];
+//#else
+//  // configure and set initial settings of the JB4ASDK
+//  successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod
+//                                            andAccessToken:kETAccessToken_Prod
+//                                             withAnalytics:YES
+//                                       andLocationServices:YES       // ONLY SET TO YES IF PURCHASED AND USING GEOFENCE CAPABILITIES
+//                                      andProximityServices:NO       // ONLY SET TO YES IF PURCHASED AND USING BEACONS
+//                                             andCloudPages:YES       // ONLY SET TO YES IF PURCHASED AND USING CLOUDPAGES
+//                                           withPIAnalytics:YES
+//                                                     error:&error];
+//
+//#endif
   //
   // if configureSDKWithAppID returns NO, check the error object for detailed failure info. See PushConstants.h for codes.
   // the features of the JB4ASDK will NOT be useable unless configureSDKWithAppID returns YES.
@@ -99,24 +99,24 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
                                                                              categories:categories];
     
     // register for push notifications - enable all notification types, one category
-    [[ETPush pushManager] registerUserNotificationSettings:settings];
-    [[ETPush pushManager] registerForRemoteNotifications];
+    //[[ETPush pushManager] registerUserNotificationSettings:settings];
+    //[[ETPush pushManager] registerForRemoteNotifications];
 
     // inform the JB4ASDK of the launch options
     // possibly UIApplicationLaunchOptionsRemoteNotificationKey or UIApplicationLaunchOptionsLocalNotificationKey
-    [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
+    //[[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
     
     
     // This method is required in order for location messaging to work and the user's location to be processed
     // Only call this method if you have LocationServices set to YES in configureSDK()
-    [[ETLocationManager sharedInstance] startWatchingLocation];
+    //[[ETLocationManager sharedInstance] startWatchingLocation];
     
     UIDevice *device = [UIDevice currentDevice];
     NSString *currentDeviceId = [[[device identifierForVendor]UUIDString] substringToIndex:3];
     NSString *emailAddress = [NSString stringWithFormat:@"alittle+%@@salesforce.com", currentDeviceId];
     NSLog(@"%@", emailAddress);
-    [[ETPush pushManager] setSubscriberKey:emailAddress];
-      [[ETPush pushManager] addAttributeNamed:@"Phone Name" value: device.name];
+    //[[ETPush pushManager] setSubscriberKey:emailAddress];
+     // [[ETPush pushManager] addAttributeNamed:@"Phone Name" value: device.name];
   }
   
   //clear the badge number
@@ -128,33 +128,33 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
   // inform the JB4ASDK of the notification settings requested
-  [[ETPush pushManager] didRegisterUserNotificationSettings:notificationSettings];
+  //[[ETPush pushManager] didRegisterUserNotificationSettings:notificationSettings];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
   // inform the JB4ASDK of the device token
-  [[ETPush pushManager] registerDeviceToken:deviceToken];
+  //[[ETPush pushManager] registerDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
   // inform the JB4ASDK that the device failed to register and did not receive a device token
-  [[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
+  //[[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
   // inform the JB4ASDK that the device received a local notification
-  [[ETPush pushManager] handleLocalNotification:notification];
+  //[[ETPush pushManager] handleLocalNotification:notification];
 }
 
 // handle category actions for remote notifications
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
 {
   // inform the JB4ASDK that the device received a remote notification
-  [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
+  //[[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
   
   if ([identifier isEqualToString:@"Approve"]) {
     // specific code to handle the notification
@@ -169,7 +169,7 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
   
   // inform the JB4ASDK that the device received a remote notification
-  [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
+  //[[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
   
   // is it a silent push?
   if (userInfo[@"aps"][@"content-available"]) {
