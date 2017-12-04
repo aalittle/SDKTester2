@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-//#import "ETPush.h"
 #import "ColorHelper.h"
 #import "ViewController.h"
 
@@ -23,100 +22,37 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   BOOL successful = NO;
   NSError *error = nil;
-  
-  self.sfmcSDK = [[MarketingCloudSDK alloc] init];
-  
-  // weak reference to avoid retain cycle within block
-  __weak __typeof__(self) weakSelf = self;
-  
-  weakSelf.sfmcSDK = [[MarketingCloudSDK alloc] init];
-  if (weakSelf.sfmcSDK != nil) {
-    NSError *configureError = nil;
-    BOOL configured = [weakSelf.sfmcSDK sfmc_configure:&configureError
-                       completionHandler:^(BOOL success, NSError *error) {
-                         // The SDK has been fully configured and is ready for use!
-                         
-                         // set the delegate if needed then ask if we are authorized - the delegate must be set here if used
-                         [UNUserNotificationCenter currentNotificationCenter].delegate = weakSelf;
-                         [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
-                                       completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                                         if (error == nil) {
-                                           if (granted == YES) {
-                                             os_log_info(OS_LOG_DEFAULT, "Authorized for notifications = %s", granted ? "YES" : "NO");
-                                           }
-                                         }
-                                       }];
-                         }];
-    if (configured == YES) {
-      // The configuation process is underway.
-    }
-  }
-  
-  if (!successful) {
-    dispatch_async(dispatch_get_main_queue(), ^{
-      // something failed in the configureSDKWithAppID call - show what the error is
-      [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Failed configureSDKWithAppID!", @"Failed configureSDKWithAppID!")
-                                  message:[error localizedDescription]
-                                 delegate:nil
-                        cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
-                        otherButtonTitles:nil] show];
-    });
-  }
-  else {
-    
-    // create "interactive notification" buttons and register for push notifications with a category
-    //
-    // this is a sample only.  Please adjust for your specific circumstances.
-    // when the notification is displayed in the notification center and the category named "Example"
-    // is included with the payload, then the notification displayed in the notification center will
-    // have 2 buttons ("View Offer" and "Add to Passbook"), depending on how much room is available
-    
-    // create a user action for View Offer Button
-    UIMutableUserNotificationAction *actionButton1 = [[UIMutableUserNotificationAction alloc] init];
-    actionButton1.identifier = @"Approve";
-    actionButton1.title = @"Approve Now";
-    
-    // create a user action for Add to Passbook Button
-    UIMutableUserNotificationAction *actionButton2 = [[UIMutableUserNotificationAction alloc] init];
-    actionButton2.identifier = @"Decline";
-    actionButton2.title = @"Decline Now";
-    
-    // create a category to let Apple know that we want these buttons displayed - will be sent down with the APNS payload
-    UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
-    category.identifier = @"INTER_1";
-    
-    // these will be the default context button(s)
-    [category setActions:@[actionButton1, actionButton2] forContext:UIUserNotificationActionContextDefault];
-    
-    // these will be the minimal context button(s)
-    [category setActions:@[actionButton1] forContext:UIUserNotificationActionContextMinimal];
-    
-    // make a set of all categories the app will support - just one for now
-    NSSet *categories = [NSSet setWithObjects:category, nil];
-    
-    // register for push notifications - enable all notification types, one category
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes: UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert
-                                                                             categories:categories];
-    
-    // register for push notifications - enable all notification types, one category
-    //[[ETPush pushManager] registerUserNotificationSettings:settings];
-    //[[ETPush pushManager] registerForRemoteNotifications];
 
-    // inform the JB4ASDK of the launch options
-    // possibly UIApplicationLaunchOptionsRemoteNotificationKey or UIApplicationLaunchOptionsLocalNotificationKey
-    //[[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
-    
-    
+  self.sfmcSDK = [[MarketingCloudSDK alloc] init];
+  BOOL configured = [self.sfmcSDK sfmc_configure:&error completionHandler:^(BOOL configured, NSError * _Nullable error) {
+    if (error) {
+      NSLog(@"%@", [error localizedDescription]);
+    }
+    else {
+      [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+      [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (error == nil) {
+          if (granted == YES) {
+            os_log_info(OS_LOG_DEFAULT, "Authorized for notifications = %s", granted ? "YES" : "NO");
+          }
+        }
+      }];
+    }
+  }];
+  
+  if (configured == YES) {
     // This method is required in order for location messaging to work and the user's location to be processed
     // Only call this method if you have LocationServices set to YES in configureSDK()
-    //[[ETLocationManager sharedInstance] startWatchingLocation];
+    //[self.sfmcSDK sfmc_startWatchingLocation];
     
     UIDevice *device = [UIDevice currentDevice];
     NSString *currentDeviceId = [[[device identifierForVendor]UUIDString] substringToIndex:3];
     NSString *emailAddress = [NSString stringWithFormat:@"alittle+%@@salesforce.com", currentDeviceId];
     NSLog(@"%@", emailAddress);
-    //[[ETPush pushManager] setSubscriberKey:emailAddress];
-     // [[ETPush pushManager] addAttributeNamed:@"Phone Name" value: device.name];
+    [self.sfmcSDK sfmc_setContactKey:emailAddress];
+    [self.sfmcSDK sfmc_setAttributeNamed:@"Phone Name" value: device.name];
+  } else {
+    
   }
   
   //clear the badge number
@@ -154,8 +90,6 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
 {
   // inform the JB4ASDK that the device received a remote notification
-  //[[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
-  
   if ([identifier isEqualToString:@"Approve"]) {
     // specific code to handle the notification
   }
@@ -169,8 +103,6 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
   
   // inform the JB4ASDK that the device received a remote notification
-  //[[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
-  
   // is it a silent push?
   if (userInfo[@"aps"][@"content-available"]) {
     // received a silent remote notification...

@@ -19,9 +19,9 @@
 		DD9CA0E81F28195C0028A0BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CA0E71F28195C0028A0BE /* WebKit.framework */; };
 		DDBDA5E31EF713F100B5DDB9 /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */; };
 		DDD2BD191F184B200087F945 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD2BD181F184B200087F945 /* TableViewController.m */; };
-		EE6A4D931FC720F600D9B8FF /* MarketingCloudSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6A4D921FC720F600D9B8FF /* MarketingCloudSDK.framework */; };
 		EE6A4D951FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */; };
-		EE6A4DA01FC7368200D9B8FF /* MarketingCloudSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EE6A4D9F1FC7368200D9B8FF /* MarketingCloudSDK.bundle */; };
+		EECEA2CA1FD5B3420075460A /* MarketingCloudSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EECEA2C91FD5B3420075460A /* MarketingCloudSDK.framework */; };
+		EECEA2D51FD5BA910075460A /* MarketingCloudSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EECEA2D41FD5BA900075460A /* MarketingCloudSDK.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +66,10 @@
 		DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
 		DDD2BD171F184B200087F945 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		DDD2BD181F184B200087F945 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		EE6A4D921FC720F600D9B8FF /* MarketingCloudSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MarketingCloudSDK.framework; sourceTree = "<group>"; };
 		EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MarketingCloudSDKConfiguration.json; sourceTree = "<group>"; };
-		EE6A4D9F1FC7368200D9B8FF /* MarketingCloudSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MarketingCloudSDK.bundle; path = MarketingCloudSDK/MarketingCloudSDK.bundle; sourceTree = "<group>"; };
+		EECEA2C41FD5B3100075460A /* MarketingCloudSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MarketingCloudSDK; sourceTree = "<group>"; };
+		EECEA2C91FD5B3420075460A /* MarketingCloudSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarketingCloudSDK.framework; path = MarketingCloudSDK/MarketingCloudSDK.framework; sourceTree = "<group>"; };
+		EECEA2D41FD5BA900075460A /* MarketingCloudSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MarketingCloudSDK.bundle; path = MarketingCloudSDK/MarketingCloudSDK.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE6A4D931FC720F600D9B8FF /* MarketingCloudSDK.framework in Frameworks */,
+				EECEA2CA1FD5B3420075460A /* MarketingCloudSDK.framework in Frameworks */,
 				DD9CA0E81F28195C0028A0BE /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,7 +102,8 @@
 		DD6312711EF3EFF700CF8E1A = {
 			isa = PBXGroup;
 			children = (
-				EE6A4D9F1FC7368200D9B8FF /* MarketingCloudSDK.bundle */,
+				EECEA2D41FD5BA900075460A /* MarketingCloudSDK.bundle */,
+				EECEA2C41FD5B3100075460A /* MarketingCloudSDK */,
 				EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */,
 				DD63127C1EF3EFF700CF8E1A /* SDKTest2 */,
 				DD6312961EF3EFF700CF8E1A /* SDKTest2Tests */,
@@ -173,7 +175,7 @@
 		DD9CA0E61F28195B0028A0BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE6A4D921FC720F600D9B8FF /* MarketingCloudSDK.framework */,
+				EECEA2C91FD5B3420075460A /* MarketingCloudSDK.framework */,
 				DD9CA0E71F28195C0028A0BE /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -296,7 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE6A4DA01FC7368200D9B8FF /* MarketingCloudSDK.bundle in Resources */,
+				EECEA2D51FD5BA910075460A /* MarketingCloudSDK.bundle in Resources */,
 				DD63128D1EF3EFF700CF8E1A /* LaunchScreen.storyboard in Resources */,
 				EE6A4D951FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json in Resources */,
 				DD63128A1EF3EFF700CF8E1A /* Assets.xcassets in Resources */,
@@ -484,11 +486,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/MarketingCloudSDK-iOS-Artifacts-master",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MarketingCloudSDK",
 				);
 				INFOPLIST_FILE = SDKTest2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleapps.SDKTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -505,11 +509,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/MarketingCloudSDK-iOS-Artifacts-master",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MarketingCloudSDK",
 				);
 				INFOPLIST_FILE = SDKTest2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleapps.SDKTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

@@ -7,11 +7,8 @@
 //
 
 #import "ViewController.h"
-//#import "ETPush.h"
-//#import "PICart.h"
-//#import "PICartItem.h"
-//#import "PIOrder.h"
-//#import "ETAnalytics.h"
+#import "AppDelegate.h"
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 @interface ViewController ()
 
@@ -62,10 +59,12 @@
   NSString *favFood = self.favFood.text;
   NSString *favSport = self.favSport.text;
   
-//  // Update the value of the Contact Record attribute
-//  // Note that the attribute must be added to the Contact record prior to sending the value
-//  // To remove the value, send a blank value
-//  // Leading and trailing blanks are removed from the name and value
+  // Update the value of the Contact Record attribute
+  // Note that the attribute must be added to the Contact record prior to sending the value
+  // To remove the value, send a blank value
+  // Leading and trailing blanks are removed from the name and value
+
+  
 //  bool successSport = [[ETPush pushManager] addAttributeNamed:@"FavSport" value:favSport];
 //  bool successFood = [[ETPush pushManager] addAttributeNamed:@"FavFood" value:favFood];
 //  
@@ -81,7 +80,7 @@
 //  if (!success){
 //    // handle if the tag was blank or nil
 //  }
-//  
+  
 }
 
 - (void)setBackgroundColor:(UIColor *)color {
