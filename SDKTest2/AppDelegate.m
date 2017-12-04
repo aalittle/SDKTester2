@@ -23,35 +23,35 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   BOOL successful = NO;
   NSError *error = nil;
-//#ifdef DEBUG
-//  // Set to YES to enable logging while debugging
-//  //[ETPush setETLoggerToRequiredState:YES];
-//
-//  // configure and set initial settings of the JB4ASDK
-//  successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug
-//                                            andAccessToken:kETAccessToken_Debug
-//                                             withAnalytics:YES
-//                                       andLocationServices:YES       // ONLY SET TO YES IF PURCHASED AND USING GEOFENCE CAPABILITIES
-//                                      andProximityServices:NO       // ONLY SET TO YES IF PURCHASED AND USING BEACONS
-//                                             andCloudPages:YES       // ONLY SET TO YES IF PURCHASED AND USING CLOUDPAGES
-//                                           withPIAnalytics:YES
-//                                                     error:&error];
-//#else
-//  // configure and set initial settings of the JB4ASDK
-//  successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod
-//                                            andAccessToken:kETAccessToken_Prod
-//                                             withAnalytics:YES
-//                                       andLocationServices:YES       // ONLY SET TO YES IF PURCHASED AND USING GEOFENCE CAPABILITIES
-//                                      andProximityServices:NO       // ONLY SET TO YES IF PURCHASED AND USING BEACONS
-//                                             andCloudPages:YES       // ONLY SET TO YES IF PURCHASED AND USING CLOUDPAGES
-//                                           withPIAnalytics:YES
-//                                                     error:&error];
-//
-//#endif
-  //
-  // if configureSDKWithAppID returns NO, check the error object for detailed failure info. See PushConstants.h for codes.
-  // the features of the JB4ASDK will NOT be useable unless configureSDKWithAppID returns YES.
-  //
+  
+  self.sfmcSDK = [[MarketingCloudSDK alloc] init];
+  
+  // weak reference to avoid retain cycle within block
+  __weak __typeof__(self) weakSelf = self;
+  
+  weakSelf.sfmcSDK = [[MarketingCloudSDK alloc] init];
+  if (weakSelf.sfmcSDK != nil) {
+    NSError *configureError = nil;
+    BOOL configured = [weakSelf.sfmcSDK sfmc_configure:&configureError
+                       completionHandler:^(BOOL success, NSError *error) {
+                         // The SDK has been fully configured and is ready for use!
+                         
+                         // set the delegate if needed then ask if we are authorized - the delegate must be set here if used
+                         [UNUserNotificationCenter currentNotificationCenter].delegate = weakSelf;
+                         [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
+                                       completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                         if (error == nil) {
+                                           if (granted == YES) {
+                                             os_log_info(OS_LOG_DEFAULT, "Authorized for notifications = %s", granted ? "YES" : "NO");
+                                           }
+                                         }
+                                       }];
+                         }];
+    if (configured == YES) {
+      // The configuation process is underway.
+    }
+  }
+  
   if (!successful) {
     dispatch_async(dispatch_get_main_queue(), ^{
       // something failed in the configureSDKWithAppID call - show what the error is
@@ -125,16 +125,11 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
   return YES;
 }
 
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-{
-  // inform the JB4ASDK of the notification settings requested
-  //[[ETPush pushManager] didRegisterUserNotificationSettings:notificationSettings];
-}
-
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
   // inform the JB4ASDK of the device token
   //[[ETPush pushManager] registerDeviceToken:deviceToken];
+  [self.sfmcSDK sfmc_setDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
@@ -144,10 +139,15 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 }
 
 
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
-  // inform the JB4ASDK that the device received a local notification
-  //[[ETPush pushManager] handleLocalNotification:notification];
+// The method will be called on the delegate when the user responded to the notification by opening the application, dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application returns from applicationDidFinishLaunching:.
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler {
+  
+  // tell the MarketingCloudSDK about the notification
+  [self.sfmcSDK sfmc_setNotificationRequest:response.notification.request];
+  
+  if (completionHandler != nil) {
+    completionHandler();
+  }
 }
 
 // handle category actions for remote notifications

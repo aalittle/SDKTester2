@@ -21,7 +21,7 @@
 		DDD2BD191F184B200087F945 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD2BD181F184B200087F945 /* TableViewController.m */; };
 		EE6A4D931FC720F600D9B8FF /* MarketingCloudSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6A4D921FC720F600D9B8FF /* MarketingCloudSDK.framework */; };
 		EE6A4D951FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */; };
-		EEA71FD11FC720D4005D3486 /* MarketingCloudSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EEA71FCF1FC720D4005D3486 /* MarketingCloudSDK.bundle */; };
+		EE6A4DA01FC7368200D9B8FF /* MarketingCloudSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EE6A4D9F1FC7368200D9B8FF /* MarketingCloudSDK.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,7 @@
 		DDD2BD181F184B200087F945 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		EE6A4D921FC720F600D9B8FF /* MarketingCloudSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MarketingCloudSDK.framework; sourceTree = "<group>"; };
 		EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MarketingCloudSDKConfiguration.json; sourceTree = "<group>"; };
-		EEA71FCF1FC720D4005D3486 /* MarketingCloudSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MarketingCloudSDK.bundle; path = "MarketingCloudSDK-iOS-Artifacts-master/MarketingCloudSDK.bundle"; sourceTree = "<group>"; };
+		EE6A4D9F1FC7368200D9B8FF /* MarketingCloudSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MarketingCloudSDK.bundle; path = MarketingCloudSDK/MarketingCloudSDK.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +101,8 @@
 		DD6312711EF3EFF700CF8E1A = {
 			isa = PBXGroup;
 			children = (
+				EE6A4D9F1FC7368200D9B8FF /* MarketingCloudSDK.bundle */,
 				EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */,
-				EEA71FCF1FC720D4005D3486 /* MarketingCloudSDK.bundle */,
 				DD63127C1EF3EFF700CF8E1A /* SDKTest2 */,
 				DD6312961EF3EFF700CF8E1A /* SDKTest2Tests */,
 				DD6312A11EF3EFF700CF8E1A /* SDKTest2UITests */,
@@ -249,6 +249,9 @@
 						DevelopmentTeam = 54D6L93E3U;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -293,11 +296,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE6A4DA01FC7368200D9B8FF /* MarketingCloudSDK.bundle in Resources */,
 				DD63128D1EF3EFF700CF8E1A /* LaunchScreen.storyboard in Resources */,
 				EE6A4D951FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json in Resources */,
 				DD63128A1EF3EFF700CF8E1A /* Assets.xcassets in Resources */,
 				DD6312881EF3EFF700CF8E1A /* Main.storyboard in Resources */,
-				EEA71FD11FC720D4005D3486 /* MarketingCloudSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,12 +486,13 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SDKTest2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleapps.SDKTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -503,12 +507,13 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SDKTest2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleapps.SDKTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};
