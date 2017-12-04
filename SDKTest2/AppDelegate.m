@@ -43,7 +43,7 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
   if (configured == YES) {
     // This method is required in order for location messaging to work and the user's location to be processed
     // Only call this method if you have LocationServices set to YES in configureSDK()
-    //[self.sfmcSDK sfmc_startWatchingLocation];
+    [self.sfmcSDK sfmc_startWatchingLocation];
     
     UIDevice *device = [UIDevice currentDevice];
     NSString *currentDeviceId = [[[device identifierForVendor]UUIDString] substringToIndex:3];
@@ -64,7 +64,6 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
   // inform the JB4ASDK of the device token
-  //[[ETPush pushManager] registerDeviceToken:deviceToken];
   [self.sfmcSDK sfmc_setDeviceToken:deviceToken];
 }
 
