@@ -18,8 +18,10 @@
 		DD8F39FD1F183FC500DF4A4A /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8F39FC1F183FC500DF4A4A /* InboxTableViewController.m */; };
 		DD9CA0E81F28195C0028A0BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CA0E71F28195C0028A0BE /* WebKit.framework */; };
 		DDBDA5E31EF713F100B5DDB9 /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */; };
-		DDCBD73E1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCBD73D1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a */; };
 		DDD2BD191F184B200087F945 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD2BD181F184B200087F945 /* TableViewController.m */; };
+		EE6A4D951FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */; };
+		EECEA2CA1FD5B3420075460A /* MarketingCloudSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EECEA2C91FD5B3420075460A /* MarketingCloudSDK.framework */; };
+		EECEA2D51FD5BA910075460A /* MarketingCloudSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EECEA2D41FD5BA900075460A /* MarketingCloudSDK.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,31 +61,15 @@
 		DD6312A41EF3EFF800CF8E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD8F39FB1F183FC500DF4A4A /* InboxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InboxTableViewController.h; sourceTree = "<group>"; };
 		DD8F39FC1F183FC500DF4A4A /* InboxTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewController.m; sourceTree = "<group>"; };
-		DD9CA0D31F28194A0028A0BE /* ETAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAnalytics.h; sourceTree = "<group>"; };
-		DD9CA0D41F28194A0028A0BE /* ETCloudPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCloudPage.h; sourceTree = "<group>"; };
-		DD9CA0D51F28194A0028A0BE /* ETCloudPageDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCloudPageDataSource.h; sourceTree = "<group>"; };
-		DD9CA0D61F28194A0028A0BE /* ETEventMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETEventMessage.h; sourceTree = "<group>"; };
-		DD9CA0D71F28194A0028A0BE /* ETEventRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETEventRegion.h; sourceTree = "<group>"; };
-		DD9CA0D81F28194A0028A0BE /* ETGenericUpdate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
-		DD9CA0D91F28194A0028A0BE /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
-		DD9CA0DA1F28194A0028A0BE /* ETLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
-		DD9CA0DB1F28194A0028A0BE /* ETMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
-		DD9CA0DC1F28194A0028A0BE /* ETPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
-		DD9CA0DD1F28194A0028A0BE /* ETRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
-		DD9CA0DE1F28194A0028A0BE /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWKLandingPagePresenter.h; sourceTree = "<group>"; };
-		DD9CA0DF1F28194A0028A0BE /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
-		DD9CA0E01F28194A0028A0BE /* JB4ASDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JB4ASDK-Bridging-Header.h"; sourceTree = "<group>"; };
-		DD9CA0E21F28194A0028A0BE /* PICart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PICart.h; sourceTree = "<group>"; };
-		DD9CA0E31F28194A0028A0BE /* PICartItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PICartItem.h; sourceTree = "<group>"; };
-		DD9CA0E41F28194A0028A0BE /* PIOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIOrder.h; sourceTree = "<group>"; };
-		DD9CA0E51F28194A0028A0BE /* PushConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
 		DD9CA0E71F28195C0028A0BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		DDBDA5E11EF713F100B5DDB9 /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		DDBDA5E21EF713F100B5DDB9 /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
-		DDCBD73D1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.9.6.21000000.a"; sourceTree = "<group>"; };
 		DDD2BD171F184B200087F945 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		DDD2BD181F184B200087F945 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		EE677F2B1F45B73700977504 /* libJB4ASDK-4.9.5.20900000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.9.5.20900000.a"; path = "JB4A-SDK/libJB4ASDK-4.9.5.20900000.a"; sourceTree = "<group>"; };
+		EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MarketingCloudSDKConfiguration.json; sourceTree = "<group>"; };
+		EECEA2C41FD5B3100075460A /* MarketingCloudSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MarketingCloudSDK; sourceTree = "<group>"; };
+		EECEA2C91FD5B3420075460A /* MarketingCloudSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarketingCloudSDK.framework; path = MarketingCloudSDK/MarketingCloudSDK.framework; sourceTree = "<group>"; };
+		EECEA2D41FD5BA900075460A /* MarketingCloudSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MarketingCloudSDK.bundle; path = MarketingCloudSDK/MarketingCloudSDK.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECEA2CA1FD5B3420075460A /* MarketingCloudSDK.framework in Frameworks */,
 				DD9CA0E81F28195C0028A0BE /* WebKit.framework in Frameworks */,
-				DDCBD73E1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +102,9 @@
 		DD6312711EF3EFF700CF8E1A = {
 			isa = PBXGroup;
 			children = (
-				DD9CA0D21F28194A0028A0BE /* JB4A-SDK */,
+				EECEA2D41FD5BA900075460A /* MarketingCloudSDK.bundle */,
+				EECEA2C41FD5B3100075460A /* MarketingCloudSDK */,
+				EE6A4D941FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json */,
 				DD63127C1EF3EFF700CF8E1A /* SDKTest2 */,
 				DD6312961EF3EFF700CF8E1A /* SDKTest2Tests */,
 				DD6312A11EF3EFF700CF8E1A /* SDKTest2UITests */,
@@ -184,36 +172,10 @@
 			path = SDKTest2UITests;
 			sourceTree = "<group>";
 		};
-		DD9CA0D21F28194A0028A0BE /* JB4A-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				DDCBD73D1FC1BE0900D44FEC /* libJB4ASDK-4.9.6.21000000.a */,
-				DD9CA0D31F28194A0028A0BE /* ETAnalytics.h */,
-				DD9CA0D41F28194A0028A0BE /* ETCloudPage.h */,
-				DD9CA0D51F28194A0028A0BE /* ETCloudPageDataSource.h */,
-				DD9CA0D61F28194A0028A0BE /* ETEventMessage.h */,
-				DD9CA0D71F28194A0028A0BE /* ETEventRegion.h */,
-				DD9CA0D81F28194A0028A0BE /* ETGenericUpdate.h */,
-				DD9CA0D91F28194A0028A0BE /* ETLandingPagePresenter.h */,
-				DD9CA0DA1F28194A0028A0BE /* ETLocationManager.h */,
-				DD9CA0DB1F28194A0028A0BE /* ETMessage.h */,
-				DD9CA0DC1F28194A0028A0BE /* ETPush.h */,
-				DD9CA0DD1F28194A0028A0BE /* ETRegion.h */,
-				DD9CA0DE1F28194A0028A0BE /* ETWKLandingPagePresenter.h */,
-				DD9CA0DF1F28194A0028A0BE /* ExactTargetEnhancedPushDataSource.h */,
-				DD9CA0E01F28194A0028A0BE /* JB4ASDK-Bridging-Header.h */,
-				DD9CA0E21F28194A0028A0BE /* PICart.h */,
-				DD9CA0E31F28194A0028A0BE /* PICartItem.h */,
-				DD9CA0E41F28194A0028A0BE /* PIOrder.h */,
-				DD9CA0E51F28194A0028A0BE /* PushConstants.h */,
-			);
-			path = "JB4A-SDK";
-			sourceTree = "<group>";
-		};
 		DD9CA0E61F28195B0028A0BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE677F2B1F45B73700977504 /* libJB4ASDK-4.9.5.20900000.a */,
+				EECEA2C91FD5B3420075460A /* MarketingCloudSDK.framework */,
 				DD9CA0E71F28195C0028A0BE /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -289,6 +251,9 @@
 						DevelopmentTeam = 54D6L93E3U;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -333,7 +298,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECEA2D51FD5BA910075460A /* MarketingCloudSDK.bundle in Resources */,
 				DD63128D1EF3EFF700CF8E1A /* LaunchScreen.storyboard in Resources */,
+				EE6A4D951FC7210100D9B8FF /* MarketingCloudSDKConfiguration.json in Resources */,
 				DD63128A1EF3EFF700CF8E1A /* Assets.xcassets in Resources */,
 				DD6312881EF3EFF700CF8E1A /* Main.storyboard in Resources */,
 			);
@@ -516,14 +483,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SDKTest2/SDKTest2.entitlements;
 				DEVELOPMENT_TEAM = 54D6L93E3U;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/MarketingCloudSDK-iOS-Artifacts-master",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MarketingCloudSDK",
+				);
 				INFOPLIST_FILE = SDKTest2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/JB4A-SDK";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleapps.SDKTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -533,14 +506,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SDKTest2/SDKTest2.entitlements;
 				DEVELOPMENT_TEAM = 54D6L93E3U;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/MarketingCloudSDK-iOS-Artifacts-master",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MarketingCloudSDK",
+				);
 				INFOPLIST_FILE = SDKTest2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/JB4A-SDK";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.littleapps.SDKTest2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};
