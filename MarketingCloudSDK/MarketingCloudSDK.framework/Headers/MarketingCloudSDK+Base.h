@@ -14,6 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** The MarketingCloudSDK base class and categories */
 @interface MarketingCloudSDK : NSObject
+- (instancetype)init NS_UNAVAILABLE;
+
+/**
+ Returns (or initializes) the shared MarketingCloudSDK instance.
+
+ @return The singleton instance of the MarketingCloudSDK.
+ */
++(instancetype)sharedInstance;
 
 /**
  This is the main configuration method, responsible for setting credentials needed to communicate with Salesforce. You must have a JSON file embedded in the application bundle with optional parameter settings as part of your project. Settings that are absent will default to NO. See documentation for example JSON
@@ -22,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completionHandler Called when the asynchronous portion has completed. Do not proceed if NO is returned and error will contain an error object describing the error.
  @return Returns YES if the synchronous portion is successful or NO if failed. Do not proceed if NO is returned and error will contain an error object describing the error.
  */
--(BOOL)sfmc_configure:(NSError * _Nullable *)error completionHandler:(void (^)(BOOL configured, NSError * _Nullable error))completionHandler;
+-(BOOL)sfmc_configure:(NSError * _Nullable *)error completionHandler:(void (^)(BOOL configured, NSString *appId, NSError * _Nullable error))completionHandler;
 
 /**
  This is the main configuration method, responsible for setting credentials needed to communicate with Salesforce. You must pass a URL to a JSON file with optional parameter settings. Settings that are absent will default to NO. See documentation for example JSON.
@@ -33,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param completionHandler Called when the asynchronous portion has completed. Do not proceed if NO is returned and error will contain an error object describing the error.
  @return Returns YES if the synchronous portion is successful or NO if failed. Do not proceed if NO is returned and error will contain an error object describing the error.
  */
--(BOOL)sfmc_configureWithURL:(NSURL *)url configurationIndex:(NSNumber *) configurationIndex error:(NSError **)error completionHandler:(void (^)(BOOL configured, NSError *completionError))completionHandler;
+-(BOOL)sfmc_configureWithURL:(NSURL *)url configurationIndex:(NSNumber *) configurationIndex error:(NSError **)error completionHandler:(void (^)(BOOL configured, NSString *appId, NSError *completionError))completionHandler;
 
 /** this method properly closes down the MarketingCloudSDK. It should be used in any cases where references to the MarketingCloudSDK need to be released.
  */
@@ -191,7 +199,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return NSString Salesforce application accessToken
  */
-- (NSString *)sfmc_accessToken;
+- (NSString * _Nullable)sfmc_accessToken;
 
 /**
  Returns the unique device identifier that Salesforce will use to identify the device.

@@ -18,25 +18,25 @@
 -(void) sfmc_trackMessageOpened:(NSDictionary *_Nonnull) inboxMessage;
 
 /**
- Set Web Analytics Mobile Analytics, Track page views within your application.
+ Track page views within your application.
  @param url a non-nil NSString to identify the location within your app traversed by your customers.  For example: com.yourpackage.viewcontrollername
  @param title a NSString (nil if n/a) to identify the title of the location within your app traversed by your customers. For example: Screen Name
  @param item a NSString (nil if n/a) to identify an item viewed by your customer.  For example: UPC-1234
  @param search a NSString (nil if n/a) to identify search terms used by your customer.  For example: blue jeans.
  */
--(void) sfmc_wamaTrackPageViewWithURL:(NSString * _Nonnull)url title:(NSString * _Nullable)title item:(NSString *_Nullable)item search:(NSString * _Nullable)search;
+-(void) sfmc_trackPageViewWithURL:(NSString * _Nonnull)url title:(NSString * _Nullable)title item:(NSString *_Nullable)item search:(NSString * _Nullable)search;
 
 /**
- Set Web Analytics Mobile Analytics, Track cart contents within your application.
+ Track cart contents within your application.
  @param cartDictionary a non-nil NSDictionanry object containing a cartID and an array of cart item dictionaries
  */
-- (void) sfmc_wamaTrackCartContents:(NSDictionary * _Nonnull) cartDictionary;
+- (void) sfmc_trackCartContents:(NSDictionary * _Nonnull) cartDictionary;
 
 /**
- Set Web Analytics Mobile Analytics, Track cart conversion within your application.
+ Track cart conversion within your application.
  @param orderDictionary a non-nil NSDictionanry object representing an order; created from a cart and cart items and "converted" into a sale of some sort
  */
-- (void) sfmc_wamaTrackCartConversion:(NSDictionary * _Nonnull) orderDictionary;
+- (void) sfmc_trackCartConversion:(NSDictionary * _Nonnull) orderDictionary;
 
 /**
  Initialize a Cart Item dictionary for use in analytics.
@@ -47,7 +47,7 @@
  @param uniqueId The unique product id. from the e-commerce system representing this cart item (string value; nil permissable)
  @return instancetype a NSDictionary representing a cart item.
  */
-- (NSDictionary *_Nullable) sfmc_wamaCartItemDictionaryWithPrice:(NSNumber *_Nonnull)price quantity:(NSNumber *_Nonnull)quantity item:(NSString *_Nonnull)item uniqueId:(NSString *_Nullable) uniqueId;
+- (NSDictionary *_Nullable) sfmc_cartItemDictionaryWithPrice:(NSNumber *_Nonnull)price quantity:(NSNumber *_Nonnull)quantity item:(NSString *_Nonnull)item uniqueId:(NSString *_Nullable) uniqueId;
 
 /**
  Initialize a Cart dictionary for use in analytics.
@@ -55,7 +55,7 @@
  @param cartItemDictionaryArray An array of cart item dictionary objects (non-nil array). An empty array indicates an empty cart, and will be used to indicate a cleared cart to the analytics system.
  @return instancetype a MarketingCloudSDKCart.
  */
-- (NSDictionary *_Nullable) sfmc_wamaCartDictionaryWithCartItemDictionaryArray:(NSArray *_Nonnull) cartItemDictionaryArray;
+- (NSDictionary *_Nullable) sfmc_cartDictionaryWithCartItemDictionaryArray:(NSArray *_Nonnull) cartItemDictionaryArray;
 
 /**
  Initialize an Order dictionary for use in analytics.
@@ -66,7 +66,7 @@
  @param cartDictionary The order's shopping cart object (non-nil object)
  @return instancetype a NSDictionary representing an order.
  */
-- (NSDictionary *_Nullable) sfmc_wamaOrderDictionaryWithOrderNumber:(NSString *_Nonnull) orderNumber shipping:(NSNumber *_Nonnull) shipping discount:(NSNumber *_Nonnull) discount cart:(NSDictionary *_Nonnull) cartDictionary;
+- (NSDictionary *_Nullable) sfmc_orderDictionaryWithOrderNumber:(NSString *_Nonnull) orderNumber shipping:(NSNumber *_Nonnull) shipping discount:(NSNumber *_Nonnull) discount cart:(NSDictionary *_Nonnull) cartDictionary;
 
 
 @end

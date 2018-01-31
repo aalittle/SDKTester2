@@ -28,27 +28,26 @@
 - (IBAction)onAddToCart:(id)sender {
   // Track the addition of a cart item
   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  NSDictionary *cartItem1 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(1.10) quantity:@(1) item:@"111" uniqueId:@"111"];
-  NSDictionary *cartItem2 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"222" uniqueId:@"222"];
-  NSDictionary *cartItem3 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"333"];
-  NSDictionary *cartItem4 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"332"];
-  NSDictionary *cartItem5 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"331"];
+  NSDictionary *cartItem1 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(1.10) quantity:@(1) item:@"111" uniqueId:@"111"];
+  NSDictionary *cartItem2 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"222" uniqueId:@"222"];
+  NSDictionary *cartItem3 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"333"];
+  NSDictionary *cartItem4 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"332"];
+  NSDictionary *cartItem5 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"331"];
 
-  NSDictionary *cart = [appDelegate.sfmcSDK sfmc_wamaCartDictionaryWithCartItemDictionaryArray:@[cartItem1, cartItem2, cartItem3, cartItem4, cartItem5]];
-  [appDelegate.sfmcSDK sfmc_wamaTrackCartContents:cart];
+  NSDictionary *cart = [MarketingCloudSDK.sharedInstance sfmc_cartDictionaryWithCartItemDictionaryArray:@[cartItem1, cartItem2, cartItem3, cartItem4, cartItem5]];
+  [MarketingCloudSDK.sharedInstance sfmc_trackCartContents:cart];
 }
 
 - (IBAction)onCompletePurchase:(id)sender {
   //Track a purchase
-  AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  NSDictionary *cartItem1 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(1.10) quantity:@(1) item:@"111" uniqueId:@"111"];
-  NSDictionary *cartItem2 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"222" uniqueId:@"222"];
-  NSDictionary *cartItem3 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"333"];
-  NSDictionary *cartItem4 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"332"];
-  NSDictionary *cartItem5 = [appDelegate.sfmcSDK sfmc_wamaCartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"331"];
+  NSDictionary *cartItem1 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(1.10) quantity:@(1) item:@"111" uniqueId:@"111"];
+  NSDictionary *cartItem2 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"222" uniqueId:@"222"];
+  NSDictionary *cartItem3 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"333"];
+  NSDictionary *cartItem4 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"332"];
+  NSDictionary *cartItem5 = [MarketingCloudSDK.sharedInstance sfmc_cartItemDictionaryWithPrice:@(4.99) quantity:@(3) item:@"333" uniqueId:@"331"];
   
-  NSDictionary *cart = [appDelegate.sfmcSDK sfmc_wamaCartDictionaryWithCartItemDictionaryArray:@[cartItem1, cartItem2, cartItem3, cartItem4, cartItem5]];
-  [appDelegate.sfmcSDK sfmc_wamaOrderDictionaryWithOrderNumber:@"1000" shipping:@(2.11) discount:@(4.99) cart:cart];
+  NSDictionary *cart = [MarketingCloudSDK.sharedInstance sfmc_cartDictionaryWithCartItemDictionaryArray:@[cartItem1, cartItem2, cartItem3, cartItem4, cartItem5]];
+  [MarketingCloudSDK.sharedInstance  sfmc_orderDictionaryWithOrderNumber:@"1000" shipping:@(2.11) discount:@(4.99) cart:cart];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,8 +65,8 @@
   // Leading and trailing blanks are removed from the name and value
 
   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  bool successSport = [appDelegate.sfmcSDK sfmc_setAttributeNamed:@"FavSport" value:favSport];
-  bool successFood = [appDelegate.sfmcSDK sfmc_setAttributeNamed:@"FavFood" value:favFood];
+  bool successSport = [MarketingCloudSDK.sharedInstance sfmc_setAttributeNamed:@"FavSport" value:favSport];
+  bool successFood = [MarketingCloudSDK.sharedInstance sfmc_setAttributeNamed:@"FavFood" value:favFood];
   
   if (!successSport || !successFood)
   {
@@ -76,12 +75,11 @@
   }
   
   // Add a tag
-  bool success = [appDelegate.sfmcSDK sfmc_addTag:@"iOSTesterApp"];
+  bool success = [MarketingCloudSDK.sharedInstance sfmc_addTag:@"iOSTesterApp"];
   
   if (!success){
     // handle if the tag was blank or nil
   }
-  
 }
 
 - (void)setBackgroundColor:(UIColor *)color {

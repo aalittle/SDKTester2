@@ -11,7 +11,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong) MarketingCloudSDK *sfmcSDK;
 
 @end
 

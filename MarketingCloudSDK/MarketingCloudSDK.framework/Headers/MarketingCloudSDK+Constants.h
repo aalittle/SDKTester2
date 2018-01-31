@@ -55,6 +55,8 @@ FOUNDATION_EXPORT NSNotificationName _Nonnull const SFMCDidRangeBeaconLocationMe
 // started monitoring a geo-fence or beacon region - userInfo contains region Id
 FOUNDATION_EXPORT NSNotificationName _Nonnull const SFMCLocationDidStartMonitoringForRegionNotification;
 
+FOUNDATION_EXPORT NSNotificationName _Nonnull const SFMCFrameworkDidBlockNotification;
+
 /** Configuration Error enumerations */
 typedef NS_ENUM(NSUInteger, configureError) {
     /** Initial enum value  */

@@ -8,6 +8,8 @@
 
 #import <MarketingCloudSDK/MarketingCloudSDK.h>
 
+FOUNDATION_EXTERN NSString * _Nonnull const MarketingCloudSDKOpenDirectMessageKey;
+
 /**
  Supporting protocol for OpenDirect with Alert, part of the Salesforce 2016-04 release.
  

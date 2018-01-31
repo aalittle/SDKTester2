@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ColorHelper.h"
 #import "ViewController.h"
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
+
 
 // AppCenter AppIDs and Access Tokens for the debug and production versions of your app
 // These values should be stored securely by your application or retrieved from a remote server
@@ -20,57 +22,74 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  BOOL successful = NO;
-  NSError *error = nil;
+    
+    // weak reference to avoid retain cycle within block
+    __weak __typeof__(self) weakSelf = self;
+    
+    NSError *configureError = nil;
+    
+    BOOL configurationUnderway = [[MarketingCloudSDK sharedInstance] sfmc_configure:&configureError completionHandler:^(BOOL success, NSString *appId, NSError *error) {
+// The SDK has been fully configured and is ready for use!
+        [self setupSDKAfterConfigurationComplete];
+        // Great place for setting the contact key, tags and attributes since you know the SDK is setup and ready.
+        // set the delegate if needed then ask if we are authorized - the delegate must be set here if used
+        [UNUserNotificationCenter currentNotificationCenter].delegate = weakSelf;
 
-  self.sfmcSDK = [[MarketingCloudSDK alloc] init];
-  BOOL configured = [self.sfmcSDK sfmc_configure:&error completionHandler:^(BOOL configured, NSError * _Nullable error) {
-    if (error) {
-      NSLog(@"%@", [error localizedDescription]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
+            completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (error == nil) {
+                if (granted == YES) {
+                    // we are authorized to use notifications, request a device token for remote notifications
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[UIApplication sharedApplication] registerForRemoteNotifications];
+                    });
+                }
+            }
+            }];
+        });
+    }];
+    if (configurationUnderway == YES) {
+        // The configuation process is underway.
     }
-    else {
-      [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-      [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (error == nil) {
-          if (granted == YES) {
-            os_log_info(OS_LOG_DEFAULT, "Authorized for notifications = %s", granted ? "YES" : "NO");
-          }
-        }
-      }];
-    }
-  }];
-  
-  if (configured == YES) {
-    // This method is required in order for location messaging to work and the user's location to be processed
-    // Only call this method if you have LocationServices set to YES in configureSDK()
-    [self.sfmcSDK sfmc_startWatchingLocation];
     
-    UIDevice *device = [UIDevice currentDevice];
-    NSString *currentDeviceId = [[[device identifierForVendor]UUIDString] substringToIndex:3];
-    NSString *emailAddress = [NSString stringWithFormat:@"alittle+%@@salesforce.com", currentDeviceId];
-    NSLog(@"%@", emailAddress);
-    [self.sfmcSDK sfmc_setContactKey:emailAddress];
-    [self.sfmcSDK sfmc_setAttributeNamed:@"Phone Name" value: device.name];
-  } else {
-    
-  }
-  
   //clear the badge number
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
   
   return YES;
 }
 
+- (void)setupSDKAfterConfigurationComplete {
+    // This method is required in order for location messaging to work and the user's location to be processed
+    // Only call this method if you have LocationServices set to YES in configureSDK()
+    [MarketingCloudSDK.sharedInstance sfmc_startWatchingLocation];
+    [MarketingCloudSDK.sharedInstance sfmc_setDebugLoggingEnabled:YES];
+    
+    UIDevice *device = [UIDevice currentDevice];
+    NSString *currentDeviceId = [[[device identifierForVendor]UUIDString] substringToIndex:3];
+    NSString *emailAddress = [NSString stringWithFormat:@"jamtime", currentDeviceId];
+    [MarketingCloudSDK.sharedInstance sfmc_setContactKey:emailAddress];
+    [MarketingCloudSDK.sharedInstance sfmc_setAttributeNamed:@"Phone Name" value: device.name];
+    NSLog(@"Contact key: %@", [MarketingCloudSDK.sharedInstance sfmc_contactKey]);
+
+}
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
   // inform the JB4ASDK of the device token
-  [self.sfmcSDK sfmc_setDeviceToken:deviceToken];
+  [MarketingCloudSDK.sharedInstance sfmc_setDeviceToken:deviceToken];
+    
+    NSString* newToken = [[[NSString stringWithFormat:@"%@",deviceToken]
+                           stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSLog(@"Push Token: %@", newToken);
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
   // inform the JB4ASDK that the device failed to register and did not receive a device token
   //[[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
+    NSLog(@"%@", [error localizedDescription]);
 }
 
 
@@ -78,7 +97,7 @@ static NSString *kETAccessToken_Prod  = @"yu5nj62ad99xday3rcngaxfy";
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler {
   
   // tell the MarketingCloudSDK about the notification
-  [self.sfmcSDK sfmc_setNotificationRequest:response.notification.request];
+  [MarketingCloudSDK.sharedInstance sfmc_setNotificationRequest:response.notification.request];
   
   if (completionHandler != nil) {
     completionHandler();
